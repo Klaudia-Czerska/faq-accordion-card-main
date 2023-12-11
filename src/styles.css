@@ -34,7 +34,7 @@ body {
     width: 90%;
 }
 
-.faq::before {
+.faq__logo {
     background: no-repeat url('../images/illustration-woman-online-mobile.svg');
     content: '';
     height: 10rem;
@@ -48,7 +48,6 @@ body {
 .faq::after {
     background: no-repeat url('../images/bg-pattern-mobile.svg') center;
     background-size: contain;
-    /* background-color: red; */
     content: '';
     height: 10rem;
     left: 50%;
@@ -103,6 +102,7 @@ body {
 .faq__question-answer {
     color: var(--dark-grayish-blue);
     display: none;
+    transition: display .3s ease;
 }
 
 .visible {
@@ -117,4 +117,70 @@ body {
     
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 800px) {
+    .faq {
+        max-width: 800px;
+        padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+    
+    .faq__logo {
+        background: no-repeat url('../images/illustration-woman-online-desktop.svg');
+        background-position: right;
+        content: '';
+        height: 90%;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+    }
+
+    .faq::before {
+        background: no-repeat url('../images/bg-pattern-desktop.svg') center;
+        background-size:cover;
+        content: '';
+        height: 100%;
+        left: -51%;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-55%);
+        width: 100%;
+    }
+
+    .faq::after {
+        background: no-repeat url('../images/illustration-box-desktop.svg') center;
+        background-size: contain;
+        content: '';
+        height: 35%;
+        left: 0;
+        position: absolute;
+        top: 43%;
+        width: 35%;
+    }
+
+    .faq__title {
+        margin-bottom: 2rem;
+        margin-left: 60%;
+        text-align: left;
+    }
+
+    .faq__questions {
+        margin-left: 60%;
+    }
+
+    .faq__question-answer-show {
+        cursor: pointer;
+    }
+
+    .faq__question-question {
+        cursor: pointer;
+        transition: color .2s ease;
+    }
+
+    .faq__question-question:hover {
+        color: var(--soft-red);
+    }
+
 }
